@@ -176,5 +176,204 @@ print(a>>2) # 0000 1010>>2 = 0000 0010
 print(bin(a>>2))
 
 
+print("*************************Logical Operators**************")
+'''
+    Logical Operators : In python they are used for conditional statements( true or false)
+    Three Operators:
+        AND, OR , NOT
+        
+'''
+X= True
+Y= False
+print('X and Y is ', X and Y)
+print('X or Y is ', X or Y)
+print('not X is ', not X )
+print('not Y is ', not Y )
+print("*******************************")
+if X and Y:
+    print("True")
+elif X or Y:
+    print('X or Y is ', X or Y)
+elif not X:
+    print('not X is ', not X )
+elif not Y:
+    print('not Y is ', not Y )
+print("*****************************************")
 
+
+print("*************************Membership Operators**************")
+'''
+    These operators are used to test whether a value or a variable is 
+    found in a sequence (Lists,Tuple,Sets,Strings,Dictionaries) or not.
+    Two types of Membership Operators:
+    in
+    not in 
+    
+'''
+Q=[1,2,3,4,5,6]
+Z=3
+D=9
+print(Z in Q) #true
+print(D in Q) #false
+print(Z not in Q) #false
+print(D not in Q) #true
+
+
+print("*************************Indentity Operators**************")
+'''
+    these Operators are used to check if two values (or variables) are located on 
+    the same part of the memory.
+    Two variables that are equal does not imply that they are identical
+    Operators:---
+    is 
+    is not
+    
+'''
+
+X1='Welcome to Python'
+X2=1234
+Y1='Welcome to Python'
+Y2=1234
+print(X1 is Y1) #True
+print(X1 is not Y1) #False
+print(X1 is not Y2) #True
+print(X1 is X2) #False
+print("*******************************")
+print(X2 is Y2)
+print(X1 is Y1)
+print("*******************************")
+#verifying using id()
+print('Id of X1',id(X1))
+print('Id of Y1',id(Y1))
+print('Id of X2',id(X2))
+print('Id of Y2',id(Y2))
+
+
+print('************************Conditional Statements or Decison Making*********')
+'''
+    if elif else
+    Syntax:
+    if condition1:
+        statements
+    elif condition2:
+        statements
+    elif condition4:
+        statements
+    else:
+        statements
+'''
+X=15
+Y=15
+if (X<Y):
+    print('X is less than Y')
+elif X>Y:
+    print('X is greater than Y')
+else:
+    print('X and Y are equal')
+
+    
+print("************************Loops******************************************")
+"""
+     There are two types of loops:
+         1. Infintie loop : when condition will never become false
+         2.Finite loops : At one point, the condition will become false and 
+             the control will move out of the loop.
+    There is one more way to categorize loops:-
+        Pre test: In this type of loops the condition is first checked and
+        then only the control moves inside the loop
+           
+        Post test: Here first the statements inside the loops are executed, and then the 
+        condition is checked
+        
+        Python does not support Post-test loops
+        
+        In Python there are three loops:-
+        While 
+        For
+        Nested
+"""
+#while loop
+count=0
+while(count<10):
+    print(count)
+    count=count+1
+print("Good Bye!")
+
+while True:
+    print(count)
+    count=count+1
+    if count>20:
+        break
+print("After Infinite Loop")
+
+"""
+    For loop sytanx:
+        for each element in a sequence do something
+        for variable in sequence:
+            statements
+"""
+print("***********************************For Loops*************************")
+fruits=["Mango","Orange","Apple","Banana","Kiwi","Grapes"]
+print(fruits)
+
+for fruit in fruits:
+    print(fruit)
+print("****************")
+print(fruits[0])
+print(fruits[1])
+
+
+#for each element in a sequence print element
+for fruit in fruits: #for each fruit in fruits 
+    print(fruit) #print fruit
+    
+print("************************************")
+for index in range(len(fruits)): #range(start,end,step) default of start is 0 
+    print(fruits[index])
+    
+print("*******************************")
+for index in range(1,len(fruits),2): #range(start,end,step) default of start is 0 
+    print(fruits[index])    
+
+print("************************************")
+myData=[10,5,4,3,7,2,1]
+for element in myData:
+    print(element)    
+
+print("************************************")
+lenOfData=len(myData)
+print(lenOfData)
+r=range(lenOfData) #start from 0 index and stop at lenOfData i.e. 7
+print(r)
+r=range(1,lenOfData,3) #start from 1 index and stop at lenOfData i.e. 7
+print(r)
+
+for i in r:
+    print(myData[i])
+    
+print("************************************")
+print("****************Nested Loop********************")    
+myNestedData=[10,5,4,[5,"Mango","Wrangal","Cyberabad"],7,2,[5.64,"Hello"],15]
+for elements in myNestedData:
+    if type(elements) == list:
+        for ele in elements:
+            print(ele)
+    else:
+        print("############")
+        print(elements)
+
+print("*****************************break and continue statement*****************")
+for val in "string":
+    if val=="i":
+        break
+    print(val)
+print("The end")
+
+print("**************Continue******************")
+for val in "string":
+    if val=="i":
+        #print(val)
+        continue
+    print(val)
+print("The end")
 
