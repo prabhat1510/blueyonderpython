@@ -28,3 +28,27 @@ print('Operator r/R Output')
 print("Full Name is :\n", fullName)
 print(r"Full Name is : \n", fullName)
 print(R"Full Name is : \n", fullName)
+
+
+# in operator returns true when string contains the given characters
+print('in Operator Output')
+flag='v' in fullName
+if flag:
+    print("character found")
+else:
+    print("character not found")
+    
+# not in operator returns true when string don't contains the given characters
+print('not in Operator Output')
+flag='Z' not in fullName
+if flag:
+    print("character found")
+else:
+    print("character not found")      
+    
+# reverse a string
+print('Reverse a given string')
+print(fullName[::-1])
+print(fullName[1:9:3]) #Start Index Pos: End Index Pos: Step
+#012345678910111213141516
+#Harshitha Jampala
