@@ -6,6 +6,7 @@ fo=open("outputtest.txt","w")
 empList = [ 2001, 'Shivani',2005, 'Sanjay', 2007, 'Babu']
 #str=str(empList)
 fo.write(str(empList))
+#fo.write(empList)
 
 #print ("employee Details : \n", empList)
 print("Data written")

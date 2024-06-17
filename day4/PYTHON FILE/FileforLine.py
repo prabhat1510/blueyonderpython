@@ -3,7 +3,7 @@
 
 # Open a file
 try:   
-    fo = open("test.txt",'r')
+    fo = open("test1.txt",'r')
 
     # reading line by line
     for line in fo:
