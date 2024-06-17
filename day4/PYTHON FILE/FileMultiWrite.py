@@ -11,10 +11,6 @@ with open("test1.txt",'w') as f:
 
 print("Data is written to the file")
 
-
-
-
-
-
 flName=input("Enter a filename ")
 with open(flName,'w') as f:
+    print("Write operation successfully done")

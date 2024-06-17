@@ -8,12 +8,12 @@ try:
     fo = open("test.txt", "r")
     str1=fo.read(10)
     print ("Reads First 10 Characters ", str1)
-    print("Current position ", fo.tell())
+    print("Current position ", fo.tell()) #Current position cursor
 
     fo.seek(0) # bring the file cursor to initial position
 
-    str=fo.read()
-    print("full file contents : ", str1)
+    strr=fo.read()
+    print("full file contents : ", strr)
     
      # Close the file
     fo.close()
