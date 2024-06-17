@@ -14,7 +14,7 @@ from customernotfoundexception import CustomerNotFoundException
 try:
     custId =  int(input("Enter the customer id to be searched : "))
     userdefinedexample.findCustomerById(custId) #We know this method will throw or raise an exception 
-except CustomerNotFoundException: #Here we are handling exception raised
-     print("Exception Handled")
+except CustomerNotFoundException as c: #Here we are handling exception raised
+     print(f'{c}')
 
 print("After try and except block")

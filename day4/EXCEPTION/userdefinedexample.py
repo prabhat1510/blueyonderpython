@@ -11,5 +11,5 @@ def findCustomerById(custId):
     if(custId == 15):
         print(f'Customer with {custId} exist')
     else:
-        raise CustomerNotFoundException('Customer with ' + str(custId) +'doesn\'t exist')
+        raise CustomerNotFoundException('Customer with ' + str(custId) +' doesn\'t exist')
 

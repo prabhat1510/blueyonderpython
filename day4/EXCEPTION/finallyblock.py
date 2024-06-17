@@ -7,8 +7,8 @@ try:
 except ValueError:
     print("You should have given either an character or a float")
 
-except ZeroDivisionError:
-    print("Infinity")
+except ZeroDivisionError as z:
+    print("Infinity"+z)
     
 finally:
     print("There may or may not have been an exception.")
