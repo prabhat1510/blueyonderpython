@@ -9,7 +9,7 @@ try:
 
  
     for line in fo:
-       if re.search(r"[S]$\w+", line):
+       if re.search(r"[S]\w+", line):
            print(line)
 
 ##    for line in fo:

@@ -2,8 +2,9 @@
 import re
 
 
-#Searches anywhere in the String
+#match searches only in the begining of the String
 result=re.match(r'India', 'India is our nation')
+#print(result)
 if result:
          print("Word Found : ", result.group(0))
 else:
