@@ -1,0 +1,88 @@
+what is a regular expression?
+Regular expression is a sequence of character(s) mainly used to find and replace patterns in a string or file.
+
+Two types of characters
+Meta characters: As the name suggests, these characters have a special meaning, similar to * in wild card character.
+
+b) Literals (like a,b,1,2…)
+
+Regular expression in python
+Module “re” that helps with regular expressions
+
+
+
+
+Common uses of Regular expression
+Search a string (search and match)
+Finding a string (findall)
+Break string into a sub strings (split)
+Replace part of a string (sub)
+
+
+
+
+
+
+
+
+A raw string is created by simply adding an ‘r’ character before the opening quote of a normal string. When a string is raw, the python parser will not even attempt to make any substitutions within it.
+
+string = 'This is a\nnormal string'  #normal string where \n is treated as newline character
+Output
+ This is a
+  normal string
+
+ rawString = r'and this is a\nraw string'
+and this is a\nraw string
+
+Regular expression methods
+re.findall() - searches for all the occurences of the String
+
+re.search() - searchs for the specific word in the entire string
+
+re.match()  - finds only the matches at the beginning
+re.sub()  - substitute
+re.split()  - spliting the string
+
+Escape Codes
+Code	Meaning
+\d	a digit
+\D	a non-digit
+\s	whitespace (tab, space, newline, etc.)
+\S	non-whitespace
+\w	alphanumeric
+\W	non-alphanumeric
+
+
+
+
+Anchoring - Specifies the relative position of the content in the input string
+Code	Meaning
+^	start of string, or line
+$	end of string, or line
+\A	start of string
+\Z	end of string
+\b	empty string at the beginning or end of a word
+\B	empty string not at the beginning or end of a word
+
+
+Basic Patterns
+
+The power of regular expressions is that they can specify patterns, not just fixed characters. Here are the most basic patterns which match single chars:
+
+a, X, 9, < -- ordinary characters just match themselves exactly. The meta-characters which do not match themselves because they have special meanings are: . ^ $ * + ? { [ ] \ | ( ) (details below)
+. (a period) -- matches any single character except newline '\n'
+\w -- (lowercase w) matches a "word" character: a letter or digit or underbar [a-zA-Z0-9_]. Note that although "word" is the mnemonic for this, it only matches a single word char, not a whole word. \W (upper case W) matches any non-word character.
+\b -- boundary between word and non-word
+\s -- (lowercase s) matches a single whitespace character -- space, newline, return, tab, form [ \n\r\t\f]. \S (upper case S) matches any non-whitespace character.
+\t, \n, \r -- tab, newline, return
+\d -- decimal digit [0-9] (some older regex utilities do not support but \d, but they all support \w and \s)
+^ = start, $ = end -- match the start or end of the string
+\ -- inhibit the "specialness" of a character. So, for example, use \. to match a period or \\ to match a slash. If you are unsure if a character has special meaning, such as '@', you can put a slash in front of it, \@, to make sure it is treated just as a character.
+
+
+referred urls
+http://www.thegeekstuff.com/2014/07/python-regex-examples
+https://pymotw.com/2/re/
+https://www.dotnetperls.com/re-python
+
