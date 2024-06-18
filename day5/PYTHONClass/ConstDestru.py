@@ -19,6 +19,7 @@ class Point:
       
    # Destructor in python
    def __del__(self):
+      print('Inside destructor')
       class_name = self.__class__.__name__
       print (class_name, "destroyed")
 
@@ -37,3 +38,6 @@ print ("pt3 object id :",id(pt3)) # prints the ids of the obejcts
 del pt1
 del pt2
 del pt3
+
+
+

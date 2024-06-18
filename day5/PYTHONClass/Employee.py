@@ -6,6 +6,7 @@ Created on Tue Jun 18 14:37:57 2024
 """
 
 class Employee:
+    #constructor
     def __init__(self,empNo,empName):
         self.eNo=empNo
         self.eName=empName
