@@ -14,7 +14,7 @@ class Department(m.Manager):
             print("Emp no : ", self._empno)
             print("Emp Name :", self._empname)
             print("Date Of Joining: ", self._dateofjoining)
-            #print("Supervisior :", self.supervisor)
-            #print("Dep :", self.dept)
+            print("Supervisior :", self._supervisor)
+            print("Dep :", self.dept)
             
             

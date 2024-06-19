@@ -10,7 +10,7 @@ import Employee as e
 class Manager(e.Employee):
     def __init__(self,empno,empname,dateofjoining,supervisor):
         e.Employee.__init__(self, empno,empname,dateofjoining)
-        self.supervisior=supervisor
+        self._supervisior=supervisor
         
     
     
