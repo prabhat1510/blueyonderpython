@@ -34,18 +34,19 @@ def getCustomerByName(cName):
 
 cust = Customer()
 cust.setCustId(13)
-cust.setCustName('Rahul')
+cust.setCustName('Rahul Kumar')
 
 def updateCustomer(cust):
     fo = open('customer.txt','r+')
     lines = fo.readlines()
-    #print(lines)
-    #for line in lines:
     for index in range(0,len(lines)):
         if(re.match(str(cust.getCustId()),lines[index])):
-           lines[index]=str(cust.getCustId())+" "+cust.getCustName()
+           lines[index]=str(cust.getCustId())+" "+cust.getCustName()+'\n'
            break
-    fo.write(str(lines))
+    print('---'+str(lines))
+    fo.seek(0)
+    for line in lines:           
+        fo.write(line)
     return "Customer updated successfully"
 
 print(cust)
