@@ -9,35 +9,29 @@ from customer import Customer
 import pickle
 
 customerList = list()
-cust = Customer()
+
 while True:
     choice = input('Want to add customer?  Enter Y/N :')
     
     if(choice == 'Y'):
         cId = input('Enter customer id : ')
         cName= input('Enter customer name : ')
+        cust = Customer()
         cust.setCustId(cId)
         cust.setCustName(cName)
         customerList.append(cust)
     else:
         break
-    
+
+print(customerList)    
 #Opening the file to send the data
-#pk = open("customerdata.pickle","wb")
+pk = open("customerdata1.pickle","wb")
 
-#pickle.dump(customerList, pk) #storing the data
+pickle.dump(customerList, pk) #storing the data
 
-#pk.close()# closing the file
+pk.close()# closing the file
 
-#print("Data is written")
+print("Data is written")
 
 
 
-pkRead = open("customerdata.pickle","rb") # opening the file
-
-listOfCustomer = pickle.load(pkRead) #reading the data
-
-print(listOfCustomer) #printing the output
-
-for c in listOfCustomer:
-    
