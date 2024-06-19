@@ -18,11 +18,12 @@ class mathAbcClass(ABC):
          @abstractmethod
          def execute(self):
                   pass
+                  
 
 # Derived class
 class addNum(mathAbcClass):
-         pass
-         
+         #pass 
+
 
          #paramaterized constructor
          def __init__(self,num1, num2):
