@@ -1,4 +1,4 @@
-# method overloading in python
+# operator overloading in python
 
 # overloaded function
 def add(instanceOf, *args):

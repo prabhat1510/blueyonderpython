@@ -17,6 +17,8 @@ class B1:
         self._num1=num1
     def b1Method(self):
         print("Inside class B1" )
+    def a1Method(self):
+        print("Inside method a1 of class B1 " )
 
 #Derived class declaration
 class C1(A1, B1):
