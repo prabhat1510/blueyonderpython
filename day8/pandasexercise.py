@@ -38,3 +38,10 @@ print(brics)
 print("*********************************************")
 brics.set_index("country",inplace=True)
 print(brics)
+
+print("************************************************")
+print(brics["area"]) #getting particular column data
+print(brics["area"].mean())#mean of all data present in particular 
+print(round(brics["area"].mean(),2))
+
+print(brics.describe())

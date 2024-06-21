@@ -1,0 +1,17 @@
+Read the emp1.csv and perform the following operations:
+
+1.  Display top 6 rows.
+2.  Display last 5 rows.
+3.  List the columns in the dataframe
+4.  Display the columns: First Name, Gender, Team
+5.  Rename the columns: First Name as Name, Bonus % as Bonus
+6.  Reorder the columns as Name, Gender, Team, Salary
+7.  Add a column BonusAmt = (Bonus * Salary)/100
+8.  Dispaly the male records from the Product team
+9.  Display the Name and Team of the female members
+10. Find the minimum bonus amount of the male team members and display it along with the team 
+11. Group the data by gender and find the average salary 
+12. Drop the column LoginTime
+13. Drop the records whose name is Donna
+14. Create a pivot table with index as gender, column as Teams, function as count
+15. Convert the pivot table as an excel file.
