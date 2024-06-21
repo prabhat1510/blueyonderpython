@@ -28,3 +28,14 @@ print('####################')
 print(mtCars.shape)
 print('####################')
 print(mtCars.size)
+
+dfCars=mtCars.rename(columns={"Unnamed: 0":"Model"})
+print(dfCars)
+dfCars=dfCars.rename(columns={"mpg":"Mileage"})
+print(dfCars)
+
+print(dfCars.head(10))
+print(dfCars[:3])
+print("********************************************")
+print(dfCars[::-1]) #Reverse the dataframe
+print(dfCars[20:24])
