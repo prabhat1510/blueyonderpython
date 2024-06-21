@@ -39,3 +39,15 @@ print(dfCars[:3])
 print("********************************************")
 print(dfCars[::-1]) #Reverse the dataframe
 print(dfCars[20:24])
+print("********************************************")
+#print(dfCars)
+
+colHeader=dfCars.columns.values
+print(colHeader)
+colHeader[0]="Cars"
+print(colHeader[0])
+print(dfCars)
+print(dfCars.columns.values)
+dfCars.set_index("Mileage",inplace=True)
+
+print(dfCars)
