@@ -92,3 +92,11 @@ print("******************************************")
 right_joined_df=sales_df.join(region_df,how="right")
 print(right_joined_df)
 
+
+print('****************************************Merge*************************************')
+print(region_df)
+print(sales_df)
+merge_df=region_df.merge(sales_df,how='left',left_index=True,right_index=True)
+print(merge_df)
+print(merge_df.index)  
+print(list(merge_df.index))

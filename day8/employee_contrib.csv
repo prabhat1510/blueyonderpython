@@ -1,0 +1,10 @@
+,region,sales,sales_region
+Tony,West,103.0,103.0
+Sally,South,202.0,303.0
+Carl,West,,103.0
+Archie,North,,0.0
+Randy,East,380.0,380.0
+Ellen,South,101.0,303.0
+Fred,NaN,82.0,82.0
+Mo,East,,380.0
+HanWei,NaN,,82.0
