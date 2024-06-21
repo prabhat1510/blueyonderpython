@@ -45,3 +45,17 @@ print(brics["area"].mean())#mean of all data present in particular
 print(round(brics["area"].mean(),2))
 
 print(brics.describe())
+
+"""
+    Using data using loc and iloc
+    loc:- is a label-based which means that you have to specify rows and columns based on their row and column labels.
+    iloc:- is integer index based, so we have to specify rows and columns by their integer index like we did it the below example
+"""
+print(brics)
+print(brics.iloc[2])
+print(brics.loc['China'])
+
+
+brics.to_csv("D:\\blueyonderpythons\\day8\\brics.csv")
+brics.to_json("D:\\blueyonderpythons\\day8\\brics.json")
+brics.to_excel("D:\\blueyonderpythons\\day8\\brics.xlsx")
