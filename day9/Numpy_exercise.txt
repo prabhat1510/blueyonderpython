@@ -1,0 +1,10 @@
+1. Create 3x4 array, ex1, with values (2,3,5,7),(1,9,24,15),(5,12,19,21).
+2. Find the number of values in the array.
+3. Create a 3X4 array,ex2, with values 0,  Add 5 to ex2.
+4. Change ex1 to 4X3 array
+5. Extract the 3rd element in the 2nd row, first element in second row, third element in first row from ex1.
+6. Find the row-wise and column-wise sum of ex1
+7. convert the 2D array ex1 to 1D array and store in ex3.
+8. Find the min, max and sum of ex3.
+9. Create an array ex4 with values 2,25 with a step of 2.
+10. Create 3x4 array, ar1, with values (1,2,3,5),(19,24,15,10),(15,22,9,21), Stack ex1 and ar1 horizontally and vertically. 
