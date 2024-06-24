@@ -1,0 +1,7 @@
+{
+    "name": "Bob", 
+    "languages": ["English", "French"],
+    "age":51,
+    "salary":1555.50,
+    "address":[{"home":"Bellandur","office":"Marathalli"}]
+}
