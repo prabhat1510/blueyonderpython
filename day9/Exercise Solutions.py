@@ -42,3 +42,20 @@ print(df[['Name','Team']])
 print("***************10. Find the minimum bonus amount of the male team members and display it along with the team************************")
 df = file[(file.Gender == 'Male')][['Name','BonusAmt']].min()
 print(df)
+
+
+print("*************11. Group the data by gender and find the average salary *************************")
+print(file.groupby('Gender')['Salary'].mean())
+
+print("*************12. Drop the column LoginTime************")
+print(file.drop('Last Login Time', axis=1))
+
+print("*************13. Drop the records whose name is Donna**********")
+df = file.loc[file['Name']!='Donna']
+print(df)
+
+print("*************14. Create a pivot table with index as gender, column as Teams, function as count********")
+pivot_table = file.pivot_table(index = 'Gender',columns=['Team'],aggfunc = 'count')
+print(pivot_table)
+print("********************15. Convert the pivot table as an excel file.************************")
+pivot_table.to_excel('Pivot_Table_Team_Gender.xlsx')
