@@ -87,13 +87,16 @@ def  findUserByName(uname):
         if conn:
             conn.close()    
 
-def login(uname,pword):
+def login():
     try:
+        uname=input("Enter username ")
+        pword=input("Enter password ")
         user = findUserByName(uname)
         if(user != None):
             if(user[1] == uname): 
                if(user[2]==pword):
                 print("user logged in successfully with role "+str(user[3]))
+                #Product functionality
                else:
                    raise PasswordMismatchException("Password is not correct")
         else:
@@ -104,4 +107,4 @@ def login(uname,pword):
         print(u)
 #registerUser()
 #print(findUserByName("bill"))
-login("bill1","passwrd")
+#login("bill1","passwrd")
