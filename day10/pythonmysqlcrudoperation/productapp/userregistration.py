@@ -6,7 +6,9 @@ Created on Tue Jun 25 15:11:20 2024
 """
 
 import MySQLdb
- 
+from UserNotFoundException import UserNotFoundException
+from PasswordMismatchException import PasswordMismatchException
+
 hostname = 'localhost'
 username = 'root'
 password = 'password'
@@ -40,6 +42,7 @@ def registerUser():
         conn.commit()
         print("User Registered Successfully")
     except Exception as e:
+        
         print(e)
         print("Exception Raised ")
         if conn:
@@ -48,5 +51,57 @@ def registerUser():
         if conn:
             conn.close()
     
+
     
-registerUser()
+
+def  findUserByName(uname):
+    try:
+        
+        # connecting to the mysql database
+        conn= MySQLdb.connect( host=hostname, user=username, passwd=password, db=database )
+    
+        # opening the cursor
+        cr = conn.cursor()
+        
+                  
+        findUserByName="SELECT * FROM users where username=%s"
+    
+        cr.execute(findUserByName,([uname]))
+           
+        user = cr.fetchone()
+        
+        if(user == None):
+            raise UserNotFoundException("User with name "+str(uname)+ " not found in record")
+        else:
+            return user
+    except UserNotFoundException as r:
+        print(r)
+        if conn:
+            conn.rollback()
+    except Exception as e:
+        print(e)
+        print("Exception Raised ")
+        if conn:
+            conn.rollback()
+    finally:
+        if conn:
+            conn.close()    
+
+def login(uname,pword):
+    try:
+        user = findUserByName(uname)
+        if(user != None):
+            if(user[1] == uname): 
+               if(user[2]==pword):
+                print("user logged in successfully with role "+str(user[3]))
+               else:
+                   raise PasswordMismatchException("Password is not correct")
+        else:
+            raise UserNotFoundException("User with username "+uname+" doesn't exists")
+    except PasswordMismatchException as p:
+        print(p)
+    except UserNotFoundException as u:
+        print(u)
+#registerUser()
+#print(findUserByName("bill"))
+login("bill1","passwrd")
