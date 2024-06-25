@@ -218,8 +218,8 @@ def updateProduct(productid,productname):
 #print(r)
 
 #Find Product By Name
-#r= findProductByName('iPhone 166666')
-#print(r)
+r= findProductByName('iPhone 166666')
+print(r)
 
 #Find All
 #print(findProducts())
