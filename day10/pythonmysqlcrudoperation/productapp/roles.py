@@ -92,8 +92,7 @@ def  findRoleByName(rolename):
         cr.execute(findRoleByName,([rolename]))
            
         role = cr.fetchone()
-        # save data to database
-        conn.commit()
+        
         if(role == None):
             raise RoleNotFoundException("Role with name "+str(rolename)+ " not found in record")
         else:
@@ -127,8 +126,7 @@ def  findRoles():
         cr.execute(findRoles)
            
         roles = cr.fetchall()
-        # save data to database
-        conn.commit()
+        
         if(roles == None):
             raise RoleNotFoundException("Roles not found in record")
         else:
@@ -146,14 +144,58 @@ def  findRoles():
         if conn:
             conn.close()
 
+
+def deleteById(roleid):
+    
+    try:
+        # connecting to the mysql database
+        conn= MySQLdb.connect( host=hostname, user=username, passwd=password, db=database )
+    
+        # opening the cursor
+        cr = conn.cursor()
+    
+        strDelete="DELETE FROM roles WHERE roleid=%s"
+    
+        #sending sql queries
+        cr.execute(strDelete,([roleid]))
+        
+        if(cr.rowcount == 0):
+            raise RoleNotFoundException("Role with id "+str(roleid)+ " not found in record. Unable to delete it")
+        else:
+            # save data to database
+            conn.commit()
+            return "Role with id "+str(roleid)+ " deleted"
+          
+        #print("deleted")
+    except RoleNotFoundException as r:
+        print(r)
+        if conn:
+            conn.rollback()
+    except Exception:
+        print("Exception Raised")
+        if conn:
+            conn.rollback()
+    finally:
+        if conn:
+            conn.close()
 #Code which calls createRoles has to pass rolename
-# Collecting course details
 #rolename=input("Enter role name :")
 #createRoles(rolename)
 
+#Find Role By Id
 #r= findRoleById(2)
 #print(r)
-r= findRoleByName('USERRRRR')
-print(r)
 
-print(findRoles())
+#Find Role By Name
+#r= findRoleByName('USERRRRR')
+#print(r)
+
+#Find All
+#print(findRoles())
+
+#Delete By Id 
+#roleid = input("Enter role id to be deleted : ")
+#print(deleteById(roleid))
+
+
+#Update Functionality
