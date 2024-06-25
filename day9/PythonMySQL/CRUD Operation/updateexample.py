@@ -20,7 +20,7 @@ conn= MySQLdb.connect( host=hostname, user=username, passwd=password, db=databas
 
 # opening the cursor
 cr = conn.cursor() 
-
+ 
 #Query
 updateQuery = "UPDATE course SET coursename=%s WHERE courseid=%s"
 cr.execute(updateQuery,(newcname,cid))
