@@ -178,6 +178,42 @@ def deleteById(roleid):
     finally:
         if conn:
             conn.close()
+
+def updateRole(roleid,rolename):
+    
+    try:
+        # connecting to the mysql database
+        conn= MySQLdb.connect( host=hostname, user=username, passwd=password, db=database )
+    
+        # opening the cursor
+        cr = conn.cursor()
+    
+        strDelete="UPDATE roles SET rolename = %s WHERE roleid=%s"
+    
+        #sending sql queries
+        cr.execute(strDelete,([rolename,roleid]))
+        
+        if(cr.rowcount == 0):
+            raise RoleNotFoundException("Role with id "+str(roleid)+ " not found in record. Unable to update it")
+        else:
+            # save data to database
+            conn.commit()
+            return "Role with id "+str(roleid)+ " updated"
+          
+        #print("deleted")
+    except RoleNotFoundException as r:
+        print(r)
+        if conn:
+            conn.rollback()
+    except Exception:
+        print("Exception Raised")
+        if conn:
+            conn.rollback()
+    finally:
+        if conn:
+            conn.close()
+            
+
 #Code which calls createRoles has to pass rolename
 #rolename=input("Enter role name :")
 #createRoles(rolename)
@@ -199,3 +235,7 @@ def deleteById(roleid):
 
 
 #Update Functionality
+roleid = input("Enter role id to be updated : ")
+rolename=input("Enter role name :")
+r= updateRole(roleid,rolename)
+print(r)
