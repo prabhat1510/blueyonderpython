@@ -99,36 +99,39 @@ def productWelcome(user):
      print("***************5. To Exit enter 5**********************")
      while(True):
          
-         choice = int(input("Enter appropriate option "))
-         if(choice == 1):
-             if(user[3] == 2):
-                 productname=input("Enter product name :")
-                 price=int(input("Enter price product :"))
-                 description=input("Enter product description :")
-                 products.createProducts(productname, price, description)
+         choice = input("Enter appropriate option ")
+         if(choice != "" and choice in ('1','2','3','4','5')):
+             ch=int(choice)
+             if(ch == 1):
+                 if(user[3] == 2):
+                     productname=input("Enter product name :")
+                     price=int(input("Enter price product :"))
+                     description=input("Enter product description :")
+                     products.createProducts(productname, price, description)
+                 else:
+                     print("You don't have authority to add product")
+                     break
+                 #pass
+             elif(ch == 2):
+                 productId = input("Enter product id to be searched : ")
+                 product = products.findProductById(productId)
+                 print(product)
+                 #return product
+                 #pass
+             elif(ch == 3):
+                 productName=input("Enter product name for search : ")
+                 product = products.findProductByName(productName)
+                 print(product)
+                 #return product
+             elif(ch == 4):
+                 prods = products.findProducts()
+                 print(prods)
+                 #return prods
              else:
-                 print("You don't have authority to add product")
                  break
-             #pass
-         elif(choice == 2):
-             productId = input("Enter product id to be searched : ")
-             product = products.findProductById(productId)
-             print(product)
-             #return product
-             #pass
-         elif(choice == 3):
-             productName=input("Enter product name for search : ")
-             product = products.findProductByName(productName)
-             print(product)
-             #return product
-         elif(choice == 4):
-             prods = products.findProducts()
-             print(prods)
-             #return prods
+                 #sys.exit(0)
          else:
-             break
-             #sys.exit(0)
-         
+             print("Enter correct options")
 
 def login():
     try:
