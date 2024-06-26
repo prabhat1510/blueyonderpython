@@ -6,8 +6,10 @@ Created on Tue Jun 25 15:11:20 2024
 """
 
 import MySQLdb
+import sys
 from UserNotFoundException import UserNotFoundException
 from PasswordMismatchException import PasswordMismatchException
+import products
 
 hostname = 'localhost'
 username = 'root'
@@ -87,6 +89,47 @@ def  findUserByName(uname):
         if conn:
             conn.close()    
 
+def productWelcome(user):
+     print("***************Welcome to Product Search******************")
+     print("***************Select from below options***************")
+     print("***************1. Create Product ********")
+     print("***************2. Find Product by id *********************")
+     print("***************3. Find Product by name *********************")
+     print("***************4. Get all products *********************")
+     print("***************5. To Exit enter 5**********************")
+     while(True):
+         
+         choice = int(input("Enter appropriate option "))
+         if(choice == 1):
+             if(user[3] == 2):
+                 productname=input("Enter product name :")
+                 price=int(input("Enter price product :"))
+                 description=input("Enter product description :")
+                 products.createProducts(productname, price, description)
+             else:
+                 print("You don't have authority to add product")
+                 break
+             #pass
+         elif(choice == 2):
+             productId = input("Enter product id to be searched : ")
+             product = products.findProductById(productId)
+             print(product)
+             #return product
+             #pass
+         elif(choice == 3):
+             productName=input("Enter product name for search : ")
+             product = products.findProductByName(productName)
+             print(product)
+             #return product
+         elif(choice == 4):
+             prods = products.findProducts()
+             print(prods)
+             #return prods
+         else:
+             break
+             #sys.exit(0)
+         
+
 def login():
     try:
         uname=input("Enter username ")
@@ -97,6 +140,7 @@ def login():
                if(user[2]==pword):
                 print("user logged in successfully with role "+str(user[3]))
                 #Product functionality
+                productWelcome(user)
                else:
                    raise PasswordMismatchException("Password is not correct")
         else:

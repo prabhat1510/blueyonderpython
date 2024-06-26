@@ -9,12 +9,13 @@ import userregistration
 
 
 def main():
-    print("***************Welcome to Product App******************")
-    print("***************Select from below options***************")
-    print("***************1. To Register Yourself enter 1 ********")
-    print("***************2. To Login enter 2*********************")
-    print("***************3. To Exit enter 3**********************")
+    
     while(True):
+        print("***************Welcome to Product App******************")
+        print("***************Select from below options***************")
+        print("***************1. To Register Yourself enter 1 ********")
+        print("***************2. To Login enter 2*********************")
+        print("***************3. To Exit enter 3**********************")
         choice = int(input("Enter appropriate option "))
         if(choice == 1):
             userregistration.registerUser()
