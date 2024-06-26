@@ -140,7 +140,7 @@ def login():
         user = findUserByName(uname)
         if(user != None):
             if(user[1] == uname): 
-               if(user[2]==pword):
+               if(user[2]==pword): 
                 print("user logged in successfully with role "+str(user[3]))
                 #Product functionality
                 productWelcome(user)
