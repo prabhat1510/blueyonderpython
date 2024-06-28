@@ -1,0 +1,26 @@
+Step 1 django-admin startproject bookappproject
+Step 2 cd bookappproject
+Step 3 python manage.py startapp bookapp
+Step 4 cd  bookapp
+Step 5 Create urls.py
+Step 6 Add urlPatterns
+Step 7 Go to bookappproject
+Step 8 Open urls.py
+Step 9 Register bookapp 
+Step 10 Inside bookapp directory open views.py
+Step 11 Create index function or view to be rendered
+Step 12 Run the server using python manage.py runserver
+Step 13 Open this url http://127.0.0.1/bookapp in browser you should be able
+	to see the message defined in the index function or view
+Step 14 Add the database properties in settings.py
+Step 15 Register your app in Installed_APPs section in bookappproject/setting.py
+	For example: add "bookapp.apps.BookappConfig"
+	Here the BookappConfig is the name of the class present in 	bookapp/apps.py
+
+Step 16 Define models in bookapp/models.py
+Step 17 Run python manage.py makemigrations bookapp
+Step 18 Run python manage.py sqlmigrate bookapp 0001
+Step 19 Run python manage.py migrate
+Step 20 Check database for tables - it will get created by above commands
+Step 21 Create different views in views.py
+Step 22 Map the views to paths in bookapp/urls.py
