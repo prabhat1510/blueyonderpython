@@ -6,6 +6,8 @@
 	
 </head>
 <body>
+<a href="{% url 'bookapp:bookform' %}">Go to Add Book</a>
+
 {% if book_list %}
     <ul>
     {% for book in book_list %}

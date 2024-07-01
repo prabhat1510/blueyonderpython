@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>
+		Book Form Page
+	</title>
+	
+</head>
+<body>
+<a>You are in Book Form page</a>
+<form action="{% url 'bookapp:addBook'%}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>Enter Book Details</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+		<label>Book Name</label>
+        <input type="text" name="bookname" id="bookname" value="{{ book.book_name }}">
+		<br><label>Author</label>
+        <input type="text" name="bookauthor" id="bookauthor" value="{{ book.book_author }}">
+		<br><label>Price</label>
+        <input type="text" name="bookprice" id="bookprice" value="{{ book.book_price }}">
+		<br><label>Publisher</label>
+        <input type="text" name="bookpub" id="bookpub" value="{{ book.book_publisher }}">
+         
+    
+</fieldset>
+<input type="submit" value="Add Book">
+</form>
+<body>
+</html>
