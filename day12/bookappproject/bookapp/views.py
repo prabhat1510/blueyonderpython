@@ -84,25 +84,21 @@ def login(request):
    return render(request, 'bookapp/loggedin.html', {"username" : username})
 
 def register(request):
-    global username 
-    print("My RegisterForm*******************")
-    if request.method == "POST":
+    
+   username = "not logged in"
+   
+   if request.method == "POST":
       #Get the posted form
       MyRegisterForm = RegisterForm(request.POST)
-      print("Reqeust Method is POST")
-      #global r
-      #if MyRegisterForm.is_valid():
-      print("My RegisterForm is valid *********")
-         #global username
-      username = MyRegisterForm.cleaned_data['username']
-      fname = MyRegisterForm.cleaned_data['fname']
-      lname = MyRegisterForm.cleaned_data['lname']
-      email = MyRegisterForm.cleaned_data['email']
-      password = MyRegisterForm.cleaned_data['password']
-      r = Register(fname= fname,lname=lname,email=email,username=username,password=password)
-      print("***********Register if condition*************")
-      print(r)
-    else:
+      
+      if MyRegisterForm.is_valid():
+         username = MyRegisterForm.cleaned_data['username']
+         password = MyRegisterForm.cleaned_data['password']
+         fName = MyRegisterForm.cleaned_data['fName']
+         lName = MyRegisterForm.cleaned_data['lName']
+         email = MyRegisterForm.cleaned_data['email']
+         reg = Register(fName=fName,lName=lName,email=email,username=username,password=password)
+         reg.save()
+   else:
       MyRegisterForm = RegisterForm()
-		
-    return render(request, 'bookapp/registered.html', {"username" : "Hello"})
+   return render(request, 'bookapp/registered.html', {"username" :username})
