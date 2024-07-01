@@ -14,10 +14,10 @@ urlpatterns = [
     #path("allBooks/", views.allBooks, name="allBooks"),
     path("addBook/", views.addBook, name="addBook"),
     path("login/",views.login,name="login"),
-    path ("loginform/",TemplateView.as_view(template_name='bookapp/login.html')),
+    path ("loginform/",views.loginForm,name="loginform"),
     path("register/",views.register,name="register"),
-    path ("registerform/",TemplateView.as_view(template_name='bookapp/register.html'))
-    
+    path ("registerform/",views.regForm,name="registerform"),
+    path("home/",views.home,name="home"),
     
   
 ]

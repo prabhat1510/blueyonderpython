@@ -70,18 +70,26 @@ def displayBookForm(request):
     
 def login(request):
    username = "not logged in"
-   
+   context ={"username" : ""}
    if request.method == "POST":
       #Get the posted form
       MyLoginForm = LoginForm(request.POST)
       
       if MyLoginForm.is_valid():
          username = MyLoginForm.cleaned_data['username']
+         password = MyLoginForm.cleaned_data['password']
+         dbUser = Register.objects.filter(username=username).values()
+         if(dbUser[0].get("password") == password):
+            print("Logged in successfully")
+            context = {"username" : username+ " Logged in successfully"}
+         else:
+            context = {"username" : username+" Password not matching"}
+            print("Password not matching")
          print(username)
    else:
       MyLoginForm = LoginForm()
 		
-   return render(request, 'bookapp/loggedin.html', {"username" : username})
+   return render(request, 'bookapp/loggedin.html', context)
 
 def register(request):
     
@@ -102,3 +110,19 @@ def register(request):
    else:
       MyRegisterForm = RegisterForm()
    return render(request, 'bookapp/registered.html', {"username" :username})
+   
+def home(request):
+    template_name = "bookapp/home.html"
+    context = {"msg":""}
+    return render(request, template_name, context)
+    
+def loginForm(request):
+    template_name='bookapp/login.html'
+    context ={"msg":""}
+    return render(request, template_name, context)
+
+def regForm(request):
+    template_name='bookapp/register.html'
+    context ={"msg":""}
+    return render(request, template_name, context)
+    
