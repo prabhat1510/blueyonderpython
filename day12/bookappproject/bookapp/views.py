@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.template import loader
 from django.views import generic
-from bookapp.models import Book
+from bookapp.models import Book,Login,Register
 import json
 import datetime
 from django.utils import timezone
@@ -84,4 +84,25 @@ def login(request):
    return render(request, 'bookapp/loggedin.html', {"username" : username})
 
 def register(request):
-    pass
+    global username 
+    print("My RegisterForm*******************")
+    if request.method == "POST":
+      #Get the posted form
+      MyRegisterForm = RegisterForm(request.POST)
+      print("Reqeust Method is POST")
+      #global r
+      #if MyRegisterForm.is_valid():
+      print("My RegisterForm is valid *********")
+         #global username
+      username = MyRegisterForm.cleaned_data['username']
+      fname = MyRegisterForm.cleaned_data['fname']
+      lname = MyRegisterForm.cleaned_data['lname']
+      email = MyRegisterForm.cleaned_data['email']
+      password = MyRegisterForm.cleaned_data['password']
+      r = Register(fname= fname,lname=lname,email=email,username=username,password=password)
+      print("***********Register if condition*************")
+      print(r)
+    else:
+      MyRegisterForm = RegisterForm()
+		
+    return render(request, 'bookapp/registered.html', {"username" : "Hello"})

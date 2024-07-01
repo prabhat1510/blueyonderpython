@@ -15,7 +15,7 @@ class Login(models.Model):
     username =  models.CharField(max_length =100)
     password = models.CharField(max_length =100)
  
-class RegisterForm(models.Model):
+class Register(models.Model):
     fName = models.CharField(max_length =50)
     lName = models.CharField(max_length =50)
     email = models.CharField(max_length = 50)
