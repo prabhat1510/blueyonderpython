@@ -1,0 +1,27 @@
+Steps to create Rest API using django_rest_framework
+1. python -m venv django env
+2. Go to env directory and run activate command 
+3. pip install django_rest_framework
+4. django-admin startproject app
+5. cd app
+6. django-admin startapp customerapp
+7. setting.py in INSTALLED_APPS we need to register customerapp and 
+	Django Rest Framework
+	INSTALLED_APPS = [
+    'customerapp',
+    'rest_framework',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+8.  cd  customerapp
+9.  Create urls.py
+10. Add urlPatterns
+11. Go to customerappproject
+12. Open urls.py
+13 Inside customerapp directory open views.py
+14 Create index function or view to be rendered
+15 Run the server using python manage.py runserver

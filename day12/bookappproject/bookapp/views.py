@@ -78,7 +78,7 @@ def login(request):
       if MyLoginForm.is_valid():
          username = MyLoginForm.cleaned_data['username']
          password = MyLoginForm.cleaned_data['password']
-         dbUser = Register.objects.filter(username=username).values()
+         dbUser = Login.objects.filter(username=username).values()
          if(dbUser[0].get("password") == password):
             print("Logged in successfully")
             context = {"username" : username+ " Logged in successfully"}
@@ -105,7 +105,9 @@ def register(request):
          fName = MyRegisterForm.cleaned_data['fName']
          lName = MyRegisterForm.cleaned_data['lName']
          email = MyRegisterForm.cleaned_data['email']
-         reg = Register(fName=fName,lName=lName,email=email,username=username,password=password)
+         login = Login(username=username,password=password)
+         login.save()
+         reg = Register(fName=fName,lName=lName,email=email,login=login)
          reg.save()
    else:
       MyRegisterForm = RegisterForm()

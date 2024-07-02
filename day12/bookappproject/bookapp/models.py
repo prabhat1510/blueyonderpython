@@ -19,6 +19,7 @@ class Register(models.Model):
     fName = models.CharField(max_length =50)
     lName = models.CharField(max_length =50)
     email = models.CharField(max_length = 50)
-    username = models.CharField(max_length =30)
-    password = models.CharField(max_length =100) 
+    #username = models.CharField(max_length =30)
+    #password = models.CharField(max_length =100)
+    login = models.ForeignKey(Login, on_delete=models.CASCADE)
     

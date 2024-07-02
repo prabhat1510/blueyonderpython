@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'bookappproject.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "bookdb",
+        "NAME": "bookdb2",
         "USER": "root",
         "PASSWORD": "password",
         "HOST": "127.0.0.1",
