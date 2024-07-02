@@ -7,4 +7,6 @@ urlpatterns = [
     #path("", views.IndexView.as_view(), name="index"),
     path('data/',views.getData,name="getdata"),
     path('postdata/',views.postData,name="postdata"),
+    path('customers/',views.getCustomers,name="getcustomers"),
+    path('addcustomer/',views.postCustomer,name="postcustomer"),
 ]
