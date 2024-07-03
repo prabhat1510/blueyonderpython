@@ -8,6 +8,7 @@ class Data(models.Model):
     
 class Customer(models.Model):
         cname = models.CharField(max_length=100)
-        dob = models.DateField("date of birth")
+        #dob = models.DateField(auto_now_add=True)
+        dob = models.DateTimeField()
         email = models.CharField(max_length=100)
         city = models.CharField(max_length=100)

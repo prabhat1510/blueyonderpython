@@ -9,4 +9,8 @@ urlpatterns = [
     path('postdata/',views.postData,name="postdata"),
     path('customers/',views.getCustomers,name="getcustomers"),
     path('addcustomer/',views.postCustomer,name="postcustomer"),
+    path('customer/<int:id>/',views.getCustomerById,name="getcustomerbyid"),
+    path('customer/<str:cname>/',views.getCustomerByName,name="getcustomerbyname"),
+    path('customer',views.getCustomerByNameUsingReqParams,name="getCustomerByNameUsingReqParams"),
+    path('deletecustomer',views.deleteCustomerById,name="deleteCustomerById"),
 ]
