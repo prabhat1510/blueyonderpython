@@ -5,7 +5,7 @@ from rest_framework import status
 from .models import Data,Customer
 from .serializer import DataSerializer,CustomerSerializer
 from .exceptions import CustomerNotFoundException
-
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def index(request):
@@ -86,11 +86,13 @@ def getCustomerByNameUsingReqParams(request):
 def deleteCustomerById(request):
     try:
         cid = request.query_params.get("id", None)
-        customer = Customer.objects.get(pk=cid)
+        customer = Customer.objects.filter(id=cid)
         if not customer:
             raise CustomerNotFoundException
         else:
             customer.delete()
             return Response({'msg': 'Person deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
-    except CustomerNotFoundException:
+    except CustomerNotFoundException :
            return Response("Cusomter with customer id not found")
+    except Exception :
+           return Response("Cusomter not found")
