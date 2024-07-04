@@ -6,7 +6,10 @@ Created on Thu Jul  4 12:10:25 2024
 """
 
 from flask_marshmallow import Marshmallow
-    
+from app import app
+from models import Employee
+
+ma = Marshmallow(app)
 class EmployeeSchema(ma.Schema):
     class Meta:
         model = Employee

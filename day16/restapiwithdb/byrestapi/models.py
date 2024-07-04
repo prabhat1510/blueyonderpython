@@ -5,11 +5,11 @@ Created on Thu Jul  4 12:10:25 2024
 @author: UD SYSTEMS
 """
 
-from flask import Flask, request,current_app
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-from app import app
-from dbconfig import db
+#from flask import Flask, request,current_app
+#from flask_sqlalchemy import SQLAlchemy
+#from flask_marshmallow import Marshmallow
+from app import db
+#from dbconfig import db
 
 #Define data model
 class Employee(db.Model):

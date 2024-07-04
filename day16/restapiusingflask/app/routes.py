@@ -7,6 +7,7 @@ Created on Thu Jul  4 09:42:14 2024
 
 from app import app
 from markupsafe import escape
+
 @app.route("/index")
 def index():
     return 'Hello World !!!'

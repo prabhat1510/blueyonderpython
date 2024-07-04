@@ -6,10 +6,11 @@ Created on Thu Jul  4 12:10:25 2024
 """
 
 
-from flask_marshmallow import Marshmallow
-from dbconfig import db
+#from flask_marshmallow import Marshmallow
+from app import db
 from serializers import EmployeeSchema
 from models import Employee
+from flask_restful import Resource
 
 employee_schema=EmployeeSchema()
 employees_schema=EmployeeSchema(many=True)
