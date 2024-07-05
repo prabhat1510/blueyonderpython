@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import sendDetailsToServer from '../service/sendDetailsToServer';
+import {addEmployee} from '../service/sendDetailsToServer';
 
 function EmployeeForm(){
     const [empData,setEmpData] =useState({
@@ -21,7 +21,8 @@ const changeHandler = e=>{
     }
     const submitHandler = e=>{
         e.preventDefault();
-       sendDetailsToServer(empData);
+        console.log("Before Add Employee call")
+        addEmployee(empData);
         console.log(empData);
     }
 
