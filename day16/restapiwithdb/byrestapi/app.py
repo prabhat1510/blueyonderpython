@@ -22,10 +22,11 @@ Created on Thu Jul  4 12:10:25 2024
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api, Resource
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@localhost:3306/flasktestdb2'
-
+CORS(app,origins=["*"])
 db = SQLAlchemy(app)
 api = Api(app)
 if __name__ == '__main__':
