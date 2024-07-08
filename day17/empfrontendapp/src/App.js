@@ -8,6 +8,7 @@ import UserRegistration from "./components/UserRegistration";
 import EmployeeForm from "./components/EmployeeForm";
 import EmployeeDetails from "./components/EmployeeDetails";
 import EmployeeList from "./components/EmployeeList";
+import EditEmployeeDetails from "./components/EditEmployeeDetails";
 import DeleteEmployee from "./components/DeleteEmployee";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
@@ -24,6 +25,7 @@ function  App() {
                         <Route element={<Errors />} />
                         <Route path="/addEmployee" element={<EmployeeForm />}  />
                         <Route path="/employeedetails" element={<EmployeeDetails />}  />
+                        <Route path="/editemployeedetails" element={<EditEmployeeDetails />}  />
                         <Route path="/employees" element={<EmployeeList />}  />
                         <Route path="/deleteEmployee" element={<DeleteEmployee />}  />
             </Routes>

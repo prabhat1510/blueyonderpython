@@ -43,7 +43,7 @@ function EmployeeList(){
                     <Link className="nav-link" to="/employeedetails" state={{from: `${item.id}`}}>
                       <i className="fa fa-pencil" aria-hidden="true">View</i>
                     </Link>
-                    <Link className="nav-link" to="/employeedetails" state={{from: `${item.id}`}}>
+                    <Link className="nav-link" to="/editemployeedetails" state={{from: `${item.id}`}}>
                       <i className="fa fa-eye" aria-hidden="true">Edit</i>
                     </Link>
                     <Link className="nav-link" to="/deleteEmployee" state={{from: `${item.id}`}}>
